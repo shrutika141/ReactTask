@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react'
+import { Route, Routes } from 'react-router-dom'
+import Blogs from './Components/Blogs'
+// import Comments from './Components/Comments.js'
 
-function App() {
+const App = () => {
+
+  useEffect(() => {
+    console.log('app')
+  })
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+        {/* <Blogs /> */}
+        <Routes>
+          <Route path="/" element={<Blogs />} />
+          {/* <Route path="/comments" element={<Comments />} />       */}
+        </Routes>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
